@@ -1,0 +1,18 @@
+<div>
+    <div id="post-title-and-cover">
+        <div id="cover-div">
+            <img id="cover-div-img" src="<%- coverImgPath %>">
+        </div>
+        <div id="cover-blur-outer">
+            <div id="cover-blur-inner">
+                <img id="cover-blur-img" src="<%- coverImgPath %> ">
+            </div>
+        </div>
+        <div id="post-title-background">
+            <div id="post-title-text">
+                <%- page.title %>
+                <%- partial("post-tags.ejs", {tags: page.tags}) %>
+            </div>
+        </div>
+    </div>
+</div>

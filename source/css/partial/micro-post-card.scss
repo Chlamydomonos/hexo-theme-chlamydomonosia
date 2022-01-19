@@ -1,0 +1,47 @@
+$body-color: black !default;
+
+.micro-post-card
+{
+    .media
+    {
+        display: flex;
+        border-radius: 0.25rem;
+        .media-left
+        {
+            display: flex;
+            align-self: center;
+            align-items: center;
+            padding-right: 0.25rem;
+            margin-right: 0.25rem;
+            border-right: 0.5px solid rgba($color: $body-color, $alpha: 0.5);
+
+            .image
+            {
+                display: flex;
+                align-self: center;
+                div
+                {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10%;
+                    background-size: cover;
+                }
+            }
+        }
+
+        .media-content
+        {
+            display: flex;
+            align-self: center;
+            flex-basis: content;
+            a
+            {
+                display: flex;
+                color: $body-color;
+                font-size: small;
+            }
+        }
+    }
+
+    padding: 0.5rem;
+}

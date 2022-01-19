@@ -1,0 +1,21 @@
+<%- partial("partial/abstract-archive-header.ejs", {headerTitle: getTitle(page, false)}) %>
+<div class="columns is-gapless">
+    <div class="column is-1 is-hidden-mobile without-content"></div>
+    <div class="column without-content">
+        <div class="background-1 main-column">
+            <%- partial("partial/abstract-archive.ejs") %>
+        </div>
+    </div>
+
+    <div class="column is-3 is-hidden-mobile without-content">
+        <div class="container post-side without-content">
+            <%- partial("partial/profile-card.ejs") %>
+            <div class="cards-margin without-content"></div>
+            <%- partial("partial/index-nav.ejs") %>
+        </div>
+    </div>
+    <div class="column is-1 is-hidden-mobile without-content"></div>
+</div>
+<div class="footer-placeholder"></div>
+<%- partial("partial/footer.ejs") %>
+<%- js(url_for("/js/archive-nav.js")) %>

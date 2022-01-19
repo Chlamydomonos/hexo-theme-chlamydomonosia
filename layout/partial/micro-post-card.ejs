@@ -1,0 +1,14 @@
+<div class="micro-post-card">
+    <div class="media background-2">
+        <div class="media-left background-1">
+            <figure class="image is-48x48" >
+                <div style="background-image: url(<%- url_for(getCoverImg(post)) %>);"></div>
+            </figure>
+        </div>
+        <div class="media-content">
+            <a href="<%- url_for(post.path) %> ">
+                <%- truncate(post.title) %>
+            </a>
+        </div>
+    </div>
+</div>

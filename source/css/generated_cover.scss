@@ -1,0 +1,9 @@
+$background-1: white !default;
+$generated-cover-background: $background-1 !default;
+$generated-cover-foreground: gray !default;
+
+.generated-cover
+{
+    background-color: $generated-cover-background;
+    color: $generated-cover-foreground;
+}

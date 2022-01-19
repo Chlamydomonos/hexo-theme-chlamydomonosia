@@ -1,0 +1,26 @@
+color_theme: light
+hljs_theme: hljs-theme-light
+
+user:
+  name: Chlamydomonos
+  avatar: https://s2.loli.net/2022/01/07/2KhZqiJQt3vY8g1.jpg
+  cover: https://s2.loli.net/2022/01/07/C5idKy4ZL8rOSJc.png
+  location: Chlamydomonosia
+  description: Xia'd tschilhib'sgn
+
+python_path: python
+
+utterances:
+  enabled: true
+  repo: Chlamydomonos/blog-comments
+  issue_term: pathname
+  label:
+  theme: github-light
+
+index_header_image:
+
+type_subtitle: true
+
+life_game_background: true
+
+about_text:

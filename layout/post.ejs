@@ -1,0 +1,41 @@
+<%- partial("partial/post-header.ejs") %>
+<div class="columns is-gapless">
+    <div class="column is-1 is-hidden-mobile without-content"></div>
+    <div class="column without-content">
+        <div class="background-1 main-column">
+            <%- partial("partial/post-title.ejs", {coverImgPath: getCoverImg(page)}) %>
+            <div class="post-date background-2">
+                <%  if(page.date)
+                    { %>
+                        <p><%- __("date") + ": " + page.date.format("YYYY-MM-DD, hh:mm:ss") %></p>
+                <%  } %>
+
+                <%  if(page.updated)
+                    { %>
+                        <p><%- __("updated") + ": " + page.updated.format("YYYY-MM-DD, hh:mm:ss") %></p>
+                <%  } %>
+            </div>
+            <div class="content background-2" id="post-content-background" style="padding: 0.5rem;">
+                <div id="all-post-contents">
+                    <%- page.content %>
+                </div>
+            </div>
+            <div class="comment-container">
+                <%- partial("partial/comment.ejs") %>
+            </div>
+        </div>
+    </div>
+
+    <div class="column is-3 is-hidden-mobile without-content">
+        <div class="container post-side without-content">
+            <%- partial("partial/profile-card.ejs") %>
+            <div class="cards-margin without-content"></div>
+            <%- partial("partial/post-nav.ejs") %>
+        </div>
+    </div>
+    <div class="column is-1 is-hidden-mobile without-content"></div>
+</div>
+<%- partial("partial/footer.ejs") %>
+<%- js(url_for("/js/post-header.js")) %>
+<%- js(url_for("/js/post-nav.js")) %>
+<%- js(url_for("/js/post-title.js")) %>

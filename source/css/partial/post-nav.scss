@@ -1,0 +1,82 @@
+$body-color: black !default;
+
+#post-nav-top-buttons
+{
+    margin-bottom: 0px;
+}
+
+.post-button
+{
+    padding: 0.5rem;
+    a
+    {
+        color: $body-color;
+        :hover
+        {
+            text-decoration: underline;
+        }
+    }
+}
+
+.post-button-container
+{
+    border-bottom: 1px solid rgba($body-color, 0.3);
+}
+
+#post-prev-column
+{
+    border-bottom: 1px solid rgba($body-color, 0.3);
+}
+
+#post-next-column
+{
+    border-bottom: 1px solid rgba($body-color, 0.3);
+    border-left: 1px solid rgba($body-color, 0.3);
+}
+
+div.post-nav-card-content
+{
+    padding: 0.5rem;
+    a
+    {
+        color: $body-color;
+        :hover
+        {
+            text-decoration: underline;
+        }
+    }
+}
+
+.post-title-in-nav
+{
+    font-weight: bolder;
+}
+
+#titles-in-post
+{
+    font-size: smaller;
+    li
+    {
+        margin-left: 0.5em;
+    }
+    a:hover
+    {
+        text-decoration: underline;
+    }
+}
+
+.post-nav-scroll-area
+{
+    margin: 0.1rem;
+    overflow-y: scroll;
+
+    ::-webkit-scrollbar
+    {
+        width: 0 !important;
+    }
+}
+
+.post-nav-scroll-content
+{
+    height: max-content;
+}

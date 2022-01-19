@@ -1,0 +1,17 @@
+$tags-color: #606060;
+
+.post-tags
+{
+    text-align: left;
+    padding: 0.25em;
+}
+
+a.post-tag
+{
+    color: $tags-color;
+    border: 2px solid $tags-color;
+    border-radius: 0.8em;
+    background-color: rgba(0, 0, 0, 0);
+    height: 1.6em;
+    line-height: 1.2;
+}

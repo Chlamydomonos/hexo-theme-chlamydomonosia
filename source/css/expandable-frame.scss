@@ -1,0 +1,25 @@
+$body-color: black !default;
+
+.expand-button
+{
+    font-size: xx-small;
+    color: rgba($color: $body-color, $alpha: 0.5);
+    cursor: pointer;
+}
+
+.expand-button:hover
+{
+    color: rgba($color: $body-color, $alpha: 0.75);
+}
+
+.retract-button
+{
+    font-size: xx-small;
+    color: rgba($color: $body-color, $alpha: 0.5);
+    cursor: pointer;
+}
+
+.retract-button:hover
+{
+    color: rgba($color: $body-color, $alpha: 0.75);
+}

@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+$background-0: #fcfcfc !default;
+$body-color: black !default;
+$life-game-color: $body-color !default;
+
+#life-game
+{
+    background-color: $background-0;
+    color: $life-game-color;
+    z-index: -1;
+};

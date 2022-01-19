@@ -1,0 +1,46 @@
+<%- partial("partial/page-component.ejs", {componentId: "1"}) %>
+
+<%
+    let perPage = 0;
+    if(theme.per_page)
+        perPage = Number(theme.per_page);
+    else
+        perPage = Number(config.per_page);
+    let width = 0;
+    let height = 0;
+    for(let  i = 0; i < perPage; i++)
+    {
+        if(perPage % i == 0 && Math.abs(i * i - perPage) < Math.abs(width * width - perPage))
+        {
+            width = i;
+            height = perPage / i;
+        }
+    }
+
+    for(let j = 0; j < height; j++)
+    {
+%>
+        <div class="columns">
+            <%
+                for(let i = 0; i < width; i++)
+                {
+                    if((page.posts.sort("date", -1).toArray())[j * width + i])
+                    {
+            %>
+                        <div class="column">
+                            <%- partial("small-post-card.ejs", {postInCard: (page.posts.sort("date", -1).toArray())[j * width + i]}) %>
+                        </div>
+            <%
+                    }
+                    else
+                    {
+            %>
+                        <div class="column"></div>
+            <%
+                    }
+                }
+            %>
+        </div>
+<%  } %>
+
+<%- partial("partial/page-component.ejs", {componentId: "2"}) %>

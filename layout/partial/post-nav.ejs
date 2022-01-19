@@ -1,0 +1,76 @@
+<div class="card post-nav vertical-scroll">
+    <%  if(page.prev && page.next)
+        { %>
+            <div class="columns is-gapless" id="post-nav-top-buttons">
+                <div class="column" id="post-prev-column">
+                    <div class="post-button is-flex is-justify-content-center">
+                        <a href="<%- url_for(page.prev.path) %>">
+                            <span class="icon-text">
+                                <span class="icon">
+                                    <i class="fas fa-angle-left"></i>
+                                </span>
+                                <span><%- __("prev") %></span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="column" id="post-next-column">
+                    <div class="post-button is-flex is-justify-content-center">
+                        <a href="<%- url_for(page.next.path) %>">
+                            <span class="icon-text">
+                                <span><%- __("next") %></span>
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    <%  }
+        else if(page.prev)
+        { %>
+            <div class="post-button-container">
+                <div class="post-button is-flex is-justify-content-center">
+                    <a href="<%- url_for(page.prev.path) %>">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-angle-left"></i>
+                            </span>
+                            <span><%- __("prev") %></span>
+                            <span class="icon"></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+    <%  }
+        else if(page.next)
+        { %>
+            <div class="post-button-container">
+                <div class="post-button is-flex is-justify-content-center">
+                    <a href="<%- url_for(page.next.path) %>">
+                        <span class="icon-text">
+                            <span class="icon"></span>
+                            <span><%- __("next") %></span>
+                            <span class="icon">
+                                <i class="fas fa-angle-right"></i>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+    <%  } %>
+    <div class="post-nav-scroll-area">
+        <div class="post-nav-scroll-content">
+            <div class="card-content post-nav-card-content">
+                <p class="post-title-in-nav">
+                    <a href="#post-title-text">
+                        <%- page.title %>
+                    </a>
+                </p>
+                <div id="titles-in-post">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+$body-color: black !default;
+
+.vertical-scroll
+{
+    ::-webkit-scrollbar
+    {
+	    width: 0.3rem;
+	    background-color: rgba(0, 0, 0, 0);
+    }
+
+    ::-webkit-scrollbar-track
+    {
+	    border-radius: 0.15rem;
+	    background-color: rgba(0, 0, 0, 0);
+        :hover
+        {
+            background-color: rgba($body-color, 0.1);
+        }
+    }
+
+    ::-webkit-scrollbar-thumb
+    {
+    	border-radius: 0.15rem;
+    	background-color: rgba($body-color, 0.2);
+        :hover
+        {
+            background-color: rgba($body-color, 0.4);
+        }
+    }
+}

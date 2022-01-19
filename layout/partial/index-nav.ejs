@@ -1,0 +1,136 @@
+<div class="card index-nav vertical-scroll">
+    <div class="scroll-area">
+        <div class="index-nav-title">
+            <%- __("recent_posts") %>
+        </div>
+        <div id="recent-posts">
+            <div class="items-summary">
+                <%
+                    let recent = site.posts.sort("date", -1).limit(10).toArray();
+                    let len = Math.min(3, recent.length);
+                    if(recent.length > 0)
+                    {
+                        for(let i = 0; i < len; i++)
+                        {
+                %>
+                            <%- partial("micro-post-card.ejs", {post: recent[i]}) %>
+                <%      }
+                    }
+                    else
+                    {
+                %>
+                        <div class="unknown-information"><%- __("no") %></div>
+                <%  } %>
+            </div>
+
+            <%  if(recent.length > 3)
+                { %>
+                    <div class="expandable-content items-more">
+                        <%  for(let i = len; i < recent.length; i++)
+                            { %>
+                                <%- partial("micro-post-card.ejs", {post: recent[i]}) %>
+                        <%  } %>
+                    </div>
+            <%  } %>
+        </div>
+
+        <div class="index-nav-title">
+            <%- __("archives") %>
+        </div>
+        <div id="recent-archives">
+        <div class="items-summary">
+            <%
+                recent = getArchives();
+                if(recent.length > 10)
+                    recent = recent.slice(0, 10);
+                len = Math.min(3, recent.length);
+                if(recent.length > 0)
+                {
+                    for(let i = 0; i < len; i++)
+                    {
+            %>
+                        <div class="archive-link">
+                            <a href="<%- url_for(recent[i].link) %>">
+                                <i class="fas fa-folder"></i>
+                                <span><%- recent[i].name %></span>
+                            </a>
+                        </div>
+            <%      }
+                }
+                else
+                {
+            %>
+                    <div class="unknown-information"><%- __("no") %></div>
+            <%  } %>
+        </div>
+
+        <%  if(recent.length > 3)
+            { %>
+                <div class="expandable-content items-more">
+                    <%  for(let i = len; i < recent.length; i++)
+                        { %>
+                            <div class="archive-link">
+                                <a href="<%- url_for(recent[i].link) %>">
+                                    <i class="fas fa-folder"></i>
+                                    <span><%- recent[i].name %></span>
+                                </a>
+                            </div>
+                    <%  } %>
+                </div>
+        <%  } %>
+        </div>
+
+        <div class="index-nav-title">
+            <%- __("categories") %>
+        </div>
+        <div id="categories">
+            <div class="items-summary">
+                <%
+                    recent = site.categories.sort("date", -1).limit(10).toArray();
+                    len = Math.min(3, recent.length);
+                    if(recent.length > 0)
+                    {
+                        for(let i = 0; i < len; i++)
+                        {
+                %>
+                            <div class="archive-link">
+                                <a href="<%- url_for(recent[i].path) %>">
+                                    <i class="fas fa-folder"></i>
+                                    <span><%- recent[i].category %></span>
+                                </a>
+                            </div>
+                <%      }
+                    }
+                    else
+                    {
+                %>
+                    <div class="unknown-information"><%- __("no") %></div>
+                <%  } %>
+            </div>
+
+            <%  if(recent.length > 3)
+                { %>
+                    <div class="expandable-content items-more">
+                        <%  for(let i = len; i < recent.length; i++)
+                            { %>
+                                <div class="archive-link">
+                                    <a href="<%- url_for(recent[i].path) %>">
+                                        <i class="fas fa-folder"></i>
+                                        <span><%- recent[i].category %></span>
+                                    </a>
+                                </div>
+                        <%  } %>
+                    </div>
+            <%  } %>
+        </div>
+
+        <div class="index-nav-title">
+            <%- __("tags") %>
+        </div>
+
+        <div class="post-tags-container vertical-scroll background-2">
+            <%- partial("post-tags.ejs", {tags: site.tags}) %>
+        </div>
+        <div id="index-nav-placeholder"></div>
+    </div>
+</div>

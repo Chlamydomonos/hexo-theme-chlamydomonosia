@@ -1,0 +1,88 @@
+<%
+
+let headerImg = url_for("/assets/index_header_placeholder.png");
+if(theme.index_header_image)
+    headerImg = theme.index_header_image;
+else if(config.index_header_image)
+    headerImg = config.index_header_image;
+
+let blogTitle = null;
+let blogSubtitle = null;
+
+if(theme.title)
+    blogTitle = theme.title;
+else
+    blogTitle = config.title;
+
+if(theme.subtitle)
+    blogSubtitle = theme.subtitle;
+else
+    blogSubtitle = config.subtitle;
+
+let typeSubtitle = false;
+if(theme.type_subtitle)
+    typeSubtitle = true;
+else if(config.type_subtitle)
+    typeSubtitle = true;
+
+%>
+
+<div class="is-hidden background-2" id="get-bg-2"></div>
+<%  if(typeSubtitle)
+    { %>
+        <div class="is-hidden" id="type-subtitle"></div>
+<%  } %>
+
+<header class="index-header is-flex is-align-items-center is-justify-content-center" id="static-index-header" style="<%- "background-image: url(" + headerImg + ")" %>">
+    <div>
+        <%  if(blogTitle)
+            { %>
+                <h1><%- blogTitle %></h1>
+        <%  } %>
+        <%  if(blogSubtitle)
+            { %>
+                <h2>
+                    <span class="placeholder-span">
+                        <%- blogSubtitle %>
+                    </span>
+                    <span id="blog-subtitle">
+                        <%- blogSubtitle %>
+                    </span>
+                </h2>
+        <%  } %>
+        <h2><span class="placeholder-span">&ensp;s</span></h2>
+    </div>
+</header>
+
+<div id="index-header-blur-container">
+    <div id="index-header-blur-filter">
+        <header class="index-header is-flex is-align-items-center is-justify-content-center" id="absolute-index-header" style="<%- "background-image: url(" + headerImg + ")" %>">
+            <div>
+                <%  if(blogTitle)
+                    { %>
+                        <h1><%- blogTitle %></h1>
+                <%  } %>
+                <%  if(blogSubtitle)
+                    { %>
+                        <h2>
+                            <span class="placeholder-span" id="full-blog-subtitle">
+                                <%- blogSubtitle %>
+                            </span>
+                            <span id="blog-subtitle">
+                                <%- blogSubtitle %>
+                            </span>
+                        </h2>
+                <%  } %>
+                <h2><span class="placeholder-span">&ensp;s</span></h2>
+            </div>
+        </header>
+    </div>
+</div>
+
+<header class="is-flex" id="fixed-index-header">
+    <h3 class="is-inline-block"><a href="<%- url_for("/") %>"><%- __("home") %></a></h3>
+    <h3 class="is-inline-block"><a href="<%- url_for("/about") %>"><%- __("about") %></a></h3>
+    <h3 class="is-inline-block"><a href="<%- url_for("/archives") %>"><%- __("archive") %></a></h3>
+</header>
+
+<%- js(url_for("/js/index-header.js")) %>

@@ -1,0 +1,24 @@
+<%  for(let i = 0; i < 2; i++)
+    { %>
+        <header class="post-header is-hidden-mobile <% if(i){ %> post-header-placeholder without-content <% } %>">
+            <div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height">
+                <section class="is-hidden-mobile is-flex-shrink-0">
+                    <h2><a href="/"><%- config.title %> </a></h2>
+                </section>
+                <h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0">
+                    <div class="is-full-height" id="post-title-in-header">
+                                <div class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">
+                                    <div class="auto-hide-overflow">
+                                        <%- page.title %>
+                                    </div>
+                                </div>
+                    </div>
+                </h3>
+                <aside class="is-flex-shrink-0">
+                    <h3 class="is-inline-block"><a href="<%- url_for("/") %>"><%- __("home") %></a></h3>
+                    <h3 class="is-inline-block"><a href="<%- url_for("/about") %>"><%- __("about") %></a></h3>
+                    <h3 class="is-inline-block"><a href="<%- url_for("/archives") %>"><%- __("archive") %></a></h3>
+                </aside>
+            </div>
+        </header>
+<%  } %>

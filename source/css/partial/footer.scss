@@ -1,0 +1,23 @@
+$background-2: #f6f6f6 !default;
+$body-color: black !default;
+
+#page-footer
+{
+    background-color: $background-2;
+    border-top: 2px outset;
+}
+
+#page-footer-text
+{
+    text-align: center;
+    a
+    {
+        color: $body-color;
+        font-weight: bolder;
+    }
+}
+
+.footer-placeholder
+{
+    height: 25vw;
+}

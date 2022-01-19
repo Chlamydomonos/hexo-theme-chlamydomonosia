@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+        <%= getTitle(page, true) %>
+    </title>
+
+    <%- js("https://code.jquery.com/jquery-3.6.0.min.js") %>
+    <script src="https://kit.fontawesome.com/9ed2d62345.js" crossorigin="anonymous"></script>
+    <%- js(url_for("/js/utils/color.js")) %>
+    <%- js(url_for("/js/page-jump.js")) %>
+
+    <%
+        let colorTheme = "light";
+        if(theme.color_theme)
+            colorTheme = theme.color_theme;
+        else if(config.color_theme)
+            colorTheme = config.color_theme;
+    %>
+    <%- css(url_for("/color-themes/") + colorTheme + ".css") %>
+
+    <%
+        let hljsTheme = "hljs-theme-light";
+        if(theme.hljs_theme)
+            hljsTheme = theme.hljs_theme;
+        else if(config.hljs_theme)
+            hljsTheme = config.hljs_theme;
+    %>
+    <%- css(url_for("/hljs-themes/") + hljsTheme + ".css") %>
+</head>
+
+<body>
+    <%- body %>
+    <%
+        let hasLifeGame = false;
+        if(theme.life_game_background)
+            hasLifeGame = true;
+        else if(!(theme.life_game_background === false))
+            if(config.life_game_background)
+                hasLifeGame = true;
+    %>
+    <%  if(hasLifeGame)
+        { %>
+            <%- js(url_for("/js/lifegame.js")) %>
+    <%  } %>
+
+    <div class="is-hidden" id="chlamydomonos-translations">
+        <div class="tr-expand"><%- __("expand") %></div>
+        <div class="tr-retract"><%- __("retract") %></div>
+    </div>
+    <%- js(url_for("/js/expandable-frame.js")) %>
+</body>
+
+</html>

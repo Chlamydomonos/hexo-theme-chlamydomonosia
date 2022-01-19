@@ -1,0 +1,53 @@
+$background-2: #f6f6f6 !default;
+$post-title-background: rgba(255, 255, 255, 0.2) !default;
+$post-title-text: black !default;
+$scheme-invert: black !default;
+
+#cover-div
+{
+    position: relative;
+}
+#cover-div-img
+{
+    position: absolute;
+    width: 100%;
+}
+#cover-div-fade
+{
+    position: absolute;
+    width: 100%;
+}
+#post-title-and-cover
+{
+    position: relative;
+    background-color: $background-2;
+}
+#post-title-background
+{
+    position: absolute;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    background-color: $post-title-background;
+    color: $post-title-text;
+    box-shadow: 0.2rem 0.2rem 0.1rem rgba($scheme-invert, 0.2);
+}
+
+#cover-blur-outer
+{
+    position: absolute;
+    left: 0px;
+    overflow: hidden;
+}
+
+#cover-blur-inner
+{
+    position: absolute;
+    filter: blur(5px);
+}
+
+#cover-blur-img
+{
+    position: absolute;
+    opacity: 1;
+}

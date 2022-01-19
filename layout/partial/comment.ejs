@@ -1,0 +1,47 @@
+<%
+
+let utterances = null;
+function getUtterances(ut)
+{
+    if(ut)
+    {
+        utterances = ut;
+        if(!utterances.repo)
+        {
+            utterances = null;
+            return;
+        }
+        if(!utterances.enabled)
+        {
+            utterances = null;
+            return;
+        }
+        if(!utterances.issue_term)
+            utterances.issue_term = "pathname";
+        if(!utterances.theme)
+            utterances.theme = "github-light";
+    }
+}
+
+getUtterances(theme.utterances);
+if(!utterances)
+getUtterances(config.utterances);
+
+%>
+
+<%  if(utterances)
+    { %>
+        <div class="comment">
+            <script src="https://utteranc.es/client.js"
+                repo="<%- utterances.repo %>"
+                issue-term="<%- utterances.issue_term %>"
+                <%  if(utterances.label)
+                    { %>
+                        label="<%- utterances.label %>"
+                <%  } %>
+                theme="<%- utterances.theme%>"
+                crossorigin="anonymous"
+                async>
+            </script>
+        </div>
+<%  } %>

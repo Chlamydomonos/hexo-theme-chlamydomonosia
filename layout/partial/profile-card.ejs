@@ -1,0 +1,121 @@
+<%
+    let hasName = false;
+    let hasAvatar = false;
+    let hasCover = false;
+    let hasLocation = false;
+    let hasDescription = false;
+    let userName = __("unknown_name");
+    let userAvatar = "https://i.loli.net/2021/07/16/Jk3VR1vK8LtsGar.png";
+    let userCover = "";
+    let userLocation = __("unknown_location");
+    let userDescription = __("unknown_description");
+
+    if(theme.user)
+    {
+        if(theme.user.name)
+        {
+            hasName = true;
+            userName = theme.user.name;
+        }
+        if(theme.user.avatar)
+        {
+            hasAvatar = true;
+            userAvatar = theme.user.avatar;
+        }
+        if(theme.user.cover)
+        {
+            hasCover = true;
+            userCover = theme.user.cover;
+        }
+        if(theme.user.location)
+        {
+            hasLocation = true;
+            userLocation = theme.user.location;
+        }
+        if(theme.user.description)
+        {
+            hasDescription = true;
+            userDescription = theme.user.description;
+        }
+    }
+    else if(config.user)
+    {
+        if(config.user.name)
+        {
+            hasName = true;
+            userName = config.user.name;
+        }
+        if(config.user.avatar)
+        {
+            hasAvatar = true;
+            userAvatar = config.user.avatar;
+        }
+        if(config.user.cover)
+        {
+            hasCover = true;
+            userCover = config.user.cover;
+        }
+        if(config.user.location)
+        {
+            hasLocation = true;
+            userLocation = config.user.location;
+        }
+        if(config.user.description)
+        {
+            hasDescription = true;
+            userDescription = config.user.description;
+        }
+    }
+    else
+    {
+        if(theme.author)
+        {
+            hasName = true;
+            userName = theme.author;
+        }
+        else if(config.author)
+        {
+            hasName = true;
+            userName = config.author;
+        }
+    }
+%>
+
+<div class="card" id="profile-card">
+    <%  if(hasCover)
+        { %>
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="<%- userCover %>" alt="Placeholder image">
+                </figure>
+            </div>
+    <%  } %>
+    <div class="card-content profile-card-content">
+        <div class="user-avatar-and-name">
+            <div class="media">
+                <div class="media-left">
+                    <figure class="image is-48x48">
+                        <img class="user-avatar" src="<%- userAvatar %>" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="media-content user-name-div">
+                    <p class="title user-name <% if(!hasName){ %> unknown-information <% } %>"><%- userName %></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content user-information">
+            <p class="user-description <% if(!hasDescription){ %> unknown-information <% } %> has-text-centered">
+                <%- userDescription %>
+            </p>
+            <p class="user-location <% if(!hasLocation){ %> unknown-information <% } %> has-text-centered">
+                <span class="icon-text">
+                    <span class="icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span>
+                    <span><%- userLocation %></span>
+                </span>
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<%
+
+var paginatorResult = paginator({
+  prev_text: '<i class="fa fa-angle-left"></i>',
+  next_text: '<i class="fa fa-angle-right"></i>',
+  escape: false
+});
+
+%>
+
+<div class="page-component is-flex is-align-items-center is-justify-content-center" id="<%- "page-component-" + componentId %>">
+    <%- paginatorResult %>
+    <span class="page-num-input">
+        <input type="number" id="<%- "page-num-" + componentId %>" name="<%- "page-num-" + componentId %>" min="1" max="<%- page.total.toString() %>" value="<%- page.current.toString() %>">
+    </span>
+    <span class="total-pages"><%- "/&nbsp;" + page.total %></span>
+    <button class="button page-button" onclick="jumpToPage(this)" componentid="<%- componentId %>"><%- __("jump") %></button>
+</div>

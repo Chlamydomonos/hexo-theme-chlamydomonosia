@@ -1,0 +1,29 @@
+<%- partial("partial/index-header.ejs") %>
+<div class="columns is-gapless">
+    <div class="column is-1 is-hidden-mobile without-content"></div>
+    <div class="column without-content">
+        <div class="background-1 main-column">
+
+            <%- partial("partial/page-component.ejs", {componentId: "1"}) %>
+
+            <%  page.posts.each(function(post, i)
+                { %>
+                    <%- partial("partial/post-card.ejs", {postInCard: post}) %>
+            <%  }) %>
+
+            <%- partial("partial/page-component.ejs", {componentId: "2"}) %>
+
+        </div>
+    </div>
+
+    <div class="column is-3 is-hidden-mobile without-content">
+        <div class="container post-side without-content">
+            <%- partial("partial/profile-card.ejs") %>
+            <div class="cards-margin without-content"></div>
+            <%- partial("partial/index-nav.ejs") %>
+        </div>
+    </div>
+    <div class="column is-1 is-hidden-mobile without-content"></div>
+</div>
+<%- partial("partial/footer.ejs") %>
+<%- js(url_for("/js/index-nav.js")) %>

@@ -1,0 +1,36 @@
+$post-date-color: grey !default;
+.post-date
+{
+    font-size: x-small;
+    color: $post-date-color;
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+}
+.post-side
+{
+    padding: 0.75rem;
+}
+.cards-margin
+{
+    padding-top: 1.5rem;
+}
+
+#post-content-background
+{
+    padding: 0.5rem;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+#all-post-contents
+{
+    img
+    {
+        border-radius: 0.4rem;
+    }
+}
+
+@import "./partial/post-title.scss";
+@import "./partial/post-tags.scss";
+@import "./partial/post-header.scss";
+@import "./partial/post-nav.scss";

@@ -1,0 +1,48 @@
+$card-color: black !default;
+$unknown-information-color: grey !default;
+
+div.profile-card-content
+{
+    padding: 0.5rem;
+}
+
+.user-avatar-and-name
+{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(to right, rgba($card-color, 0), $card-color, rgba($card-color, 0)) 30 30 stretch;
+}
+
+.user-name-div
+{
+    align-self: center;
+}
+
+.user-avatar
+{
+    border-radius: 50%;
+}
+
+.user-name
+{
+    font-size: medium;
+    vertical-align: middle;
+}
+
+.user-description
+{
+    padding-top: 0.5rem;
+    font-size: smaller;
+}
+
+.user-location
+{
+    font-size: small;
+}
+
+.unknown-information
+{
+    color: $unknown-information-color;
+}

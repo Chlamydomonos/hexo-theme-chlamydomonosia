@@ -1,0 +1,27 @@
+<div class="card post-card">
+    <div class="card-image">
+        <figure class="image">
+            <a href="<%- url_for(postInCard.path) %>">
+                <img src="<%- getCoverImg(postInCard) %>" alt="Placeholder image">
+            </a>
+        </figure>
+    </div>
+    <div class="card-content post-card-content">
+        <div class="post-card-title-container">
+            <a href="<%- url_for(postInCard.path) %>">
+                <h1 class="post-card-title"><%- postInCard.title %></h1>
+            </a>
+        </div>
+        <%- partial("./post-tags.ejs", {tags: postInCard.tags}) %>
+        <a href="<%- url_for(postInCard.path) + "#more" %>" class="post-excerpt">
+            <div>
+                <%- postInCard.excerpt %>
+            </div>
+        </a>
+        <div class="all-button-container is-flex is-align-items-center is-justify-content-center">
+            <a class="button is-outlined" href="<%- url_for(postInCard.path) + "#more" %>">
+                <%- __("read_all") %>
+            </a>
+        </div>
+    </div>
+</div>

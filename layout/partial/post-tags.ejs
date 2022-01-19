@@ -1,0 +1,9 @@
+<% let tagArray = tags.toArray() %>
+<header class="post-tags">
+    <div class="tags">
+        <%  for(let i = 0; i < tagArray.length; i++)
+            { %>
+                <a class="tag post-tag" href="<%- url_for(tagArray[i].path) %>"><%= tagArray[i].name %></a>
+        <%  } %>
+    </div>
+</header>

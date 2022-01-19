@@ -1,0 +1,44 @@
+$body-color: black !default;
+$page-number-background: #e0e0e0 !default;
+$page-number-color: $body-color !default;
+$current-page-number-background: #888888 !default;
+$current-page-number-color: white !default;
+$prev-next-button-color: $page-number-color !default;
+
+.page-number
+{
+    background-color: $page-number-background;
+    color: $page-number-color;
+    border-radius: 0.25rem;
+    min-width: 1.5rem;
+    text-align: center;
+    margin: 0.3rem;
+    font-weight: bold;
+}
+
+.page-number.current
+{
+    background-color: $current-page-number-background;
+    color: $current-page-number-color;
+}
+
+.extend
+{
+    color: $prev-next-button-color;
+    min-width: 1.5rem;
+    text-align: center;
+    margin: 0.3rem;
+}
+
+.page-num-input
+{
+    margin-left: 1.7rem;
+    margin-right: 0.4rem;
+}
+
+.page-button
+{
+    padding: 1px 0.3rem 1px 0.3rem;
+    height: auto;
+    margin-left: 1rem;
+}
